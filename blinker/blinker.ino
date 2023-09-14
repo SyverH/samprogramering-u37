@@ -3,7 +3,8 @@ const int BUTTON_PIN = 2;
 
 bool buttonState = false;
 
-void updateButton() {
+void updateButton()
+{
     buttonState = digitalRead(BUTTON_PIN);
 }
 
@@ -26,6 +27,9 @@ void setup()
 void loop()
 {
     updateButton();
-    blinkLed();
-    Serial.println(buttonState);
+
+    if (buttonState)
+    {
+        blinkLed();
+    }
 }
